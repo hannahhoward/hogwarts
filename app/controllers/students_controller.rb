@@ -18,7 +18,7 @@ class StudentsController < ApplicationController
     @student.house = House.offset(house_num).first
 
     if (@student.save)
-      flash[:notice] = "Student successfully created"
+      flash[:notice] = "The sorting hat put #{@student.name} in #{@student.house.name}!"
       redirect_to students_path
     else
       render :new

@@ -1,6 +1,11 @@
-<%= @house.name %>
+<h3><%= @house.name %></h3>
+<div>
+Students:
 <ul>
 <% @house.students.each do |student| %>
   <li><%= student.name %></li>
 <% end %>
 </ul>
+</div>
+
+<%= link_to "Back", houses_path %>

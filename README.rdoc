@@ -1,11 +1,16 @@
-== OH NO
+== HOGWARTS from Hannah!
 
-Hogwarts has lost all its magic and now NOTHING WORKS!
+Hogwarts is open for business
 
-This app is riddled with student errors.
+To run:
 
-=== First
-Correct all the errors so that this app runs properly.
+Clone the repository
 
-=== Then
-Implement a sorting hat method to randomly assign new students to one of Hogwarts' four houses.
+Then run the following commands:
+bundle install
+rake db:create
+rake db:migrate
+rake db:seed
+rails server
+
+Open your browser to localhost:3000 and have fun!
