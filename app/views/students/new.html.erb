@@ -1,0 +1,9 @@
+<h1>Make a new student!<h1>
+<%= form_for @student do |f| %>
+   <% @student.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %>
+  <%= f.label :name, "Student Name" %>
+  <%= f.text_field :name, :placeholder => "name" %>
+  <%= f.submit "Add Student!"%>
+<% end %>

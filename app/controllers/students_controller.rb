@@ -1,13 +1,28 @@
-    class StudentsController < ApplicationController
-    def index
-    @students = Students.all
+class StudentsController < ApplicationController
+  def index
+    @students = Student.all
+  end
+
+  def show
+    @student = Student.find(params[:id])
+  end
+
+  def new
+    @student = Student.new
+  end
+
+  def create
+    @student = Student.new((params[:student]))
+
+    house_num = Random.rand(House.count)
+    @student.house = House.offset(house_num).first
+
+    if (@student.save)
+      flash[:notice] = "Student successfully created"
+      redirect_to students_path
+    else
+      render :new
     end
-    def show
-      @sudent = params[:student]
-    end
-    def new
-      new_student = Student.new(parmas)
-      student = Student.create
-      house << student
-      redirect to 'idnex'
-    end
+  end
+
+end

@@ -1,0 +1,4 @@
+<h1>Here are the students</h2>
+<% @students.each do |student| %>
+  <li><%= student.name %><%= student.house ? " from #{student.house.name}" : "" %></li>
+<% end %>
